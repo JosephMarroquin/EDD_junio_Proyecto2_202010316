@@ -1,1 +1,31 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login Catsbooks</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="login-wrap">
+    <h2>Login</h2>
+
+    <div class="form">
+      <input id="usser" type="text" placeholder="Username" name="un" />
+      <input id="passw" type="password" placeholder="Password" name="pw" />
+      <button onclick="ingresarLogin()"> Sign in </button>
+      <input type="file" class="btn btn-sm btn-success" id="carga" name="carga" accept=".json"><br><br>
+      <button class="btn btn btn-success" id="botonCarga" onclick="traerDatos()">Cargar Usuarios</button>
+    </div>
+  </div>
+  <!-- partial -->
+  <script src='../admin/clases.js'></script>
+  <script src='../admin/ListaCircular.js'></script>
+  <script src='https://code.jquery.com/jquery-1.10.0.min.js'></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
