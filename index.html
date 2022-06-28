@@ -15,15 +15,16 @@
 
     <div class="form">
       <input id="usser" type="text" placeholder="Username" name="un" />
-      <input id="passw" type="password" placeholder="Password" name="pw" />
+      <input id="passw" type="password" placeholder="Password" name="pw" /><br>
+      <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Administrador</label><br><br>
       <button onclick="ingresarLogin()"> Sign in </button>
       <input type="file" class="btn btn-sm btn-success" id="carga" name="carga" accept=".json"><br><br>
-      <button class="btn btn btn-success" id="botonCarga" onclick="traerDatos()">Cargar Usuarios</button>
+      <button class="btn btn btn-success" id="botonCarga" onclick="cargarClientes()">Cargar Usuarios</button>
     </div>
   </div>
   <!-- partial -->
-  <script src='../admin/clases.js'></script>
-  <script src='../admin/ListaCircular.js'></script>
+  <script src='./admin/clases.js'></script>
+  <script src='./admin/listaClientes.js'></script>
   <script src='https://code.jquery.com/jquery-1.10.0.min.js'></script>
   <script src="script.js"></script>
 </body>

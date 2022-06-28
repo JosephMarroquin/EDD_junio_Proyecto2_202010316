@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Usuario</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">moviecats</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="data:image/png;base64,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" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name"><strong></strong>
+            <strong></strong>
+          </span>
+          <span class="user-role">Usuario</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-book"></i>
+              <span>Carga de datos</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="vistaUsuario.html">Vista Usuario
+                  </a>
+                </li>
+                <li>
+                  <a href="vistaActor.html">Vista de actores</a>
+                </li>
+                <li>
+                  <a href="vistaCategoria.html">Vista Categorias</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="../index.html">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container">
+      <h2><img class="img-responsive img-centered" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEUAAAD////8/PzW1tbw8PD4+Pg2NjYgICDZ2dm/v792dnavr6/j4+P09PQqKiq1tbWkpKRra2t8fHzNzc2NjY1OTk5mZmaioqJbW1tvb2+UlJRBQUHp6emDg4NhYWGJiYkODg4xMTEcHBw/Pz8dHR3IyMhSUlItLS2nwpeQAAAGt0lEQVR4nO2da3eiQAyGR25KQVHBC2q3tLt2//8/3KWuq1VQSN4E8czzvafzHGEmJDMZM9DA8eNwNV8vgmFhimGwWM9XYew7Kv/biP8HJ47yialikkexvKWwoRPmQaXdkSAPhSVFDd35Tbsjc1dyEHKG49VHI7+Sj9VYbBxSht6maOxXUmw8oZHIGI7fWukdeJP5HUUMpwS/kqnEYAQM3S1R0JitwJwDN3SazZ91zOFrB9owrl7cmzOJwSMCG0ZMv5IIOySooZ8DBI3JfeSgkIb+7QCtOQFSEWi4G4IEjRnucMPCGY5gfiUj2Lhghi5U0BjYyogyjMGCxqBWDZDhroAbFqB3EWM45q7zVUwwkTjG8KeAoDE/IWODGPJC0XrmiMEhDBMhQWMSwOgAhvhp9ARgQgUYyryEBwCvIt9wIyhozKZ7w52ooDHsVZFt+EPY8EfXhqGwoDFht4Y+7oupjiHzY5FpiMha3IOZ1WAaNk/c0/no0lAumjmHF9nwDOXfwpJhd4byE+kB1nTKMpReC4+w1kSOoXQ4c4IT2HAMqSWm9nCKUhxDeo2pLdtuDCW/Cy9hfCcyDPUeUtZjyjBcKxquOzFUFDScYZL/Ep3Gvw09yU83XKkarjow1HwNOS8i3RBVDm1GoG841vg0PPFBLmKQDbEF0fuQS6Zkw1TZMFU31IxoSshRDdkwUzbM1A1flQ1f1Q1flA1f1A1nyoYzdUOtHM0Rcq7GGtayVDZcqhtitiE2J1c3lNp/UQd5XwbZkLIbn8ObuqFs+f4ackGfbKhTdjpBLkCRDXXTNIxEDdlQr2hxgFy6oGcxJLYj1jMhj5NuqFe1KKFXLuiGugsifZsi3VCrAHyAXgamG3qqhvTTiYyCwC9FwV/0YTIMNeM2cszGMtR8ERm7MRiGvqIhY28bp46vl4wip6GYhnppb3LCm2noaJWfAs7RWdaeKK28NznfzTbU+r5g7fXm7U3USUeRk1AAQ50fkbddn7lHWCO3T87nQww1KsHMA7Pc0wjyqz5ntUcYeoWwYMHt6sI+MyNd7Wb3O+Gf7JINbOj7aHCGspMN/1w+4Pyh5AY3+nY2pKFgsZR9cG2AMRwXQoIF4rw65Cy3VA0D0jkCcx5f5ggbphUPqGuERDWRfwT4C1TnD3xqkZFA/Aasewv6U5H3UXgGrgMPNgbnxtsngF2UkA8q6hEdYDth4YIbQCjzH2g3M9SiAe3Yhu1IN0KUvie4Llgl4J57Dj9xMwN3ToR3huR+EcM7fOK7e8acXYtLdF9ImQ6tYUH0K7g9MKqQ6bJLK2iwyhO1CHVK9rK2v2ORCbVKFut27bX73BBrBS3ZsdxJFg31FolgX3bZrvPe6n6uMViJ/XxfiN8cECf5e63de57gl4cL5O9GGAz8OMpml/HcZJZFMbSdbg0ahv+I0zCJptNplISp+C93QtGwI6xh/7GG/cca9h9r2H+sYf+xhv3HGvYfa9h/rGH/sYb9xxr2H2vYf6xh/9EyHMcjN033+zAM9/s0dUex3A3A35E1HKfJNMsX70Vlba14X+TZNEllXUUMHS9ONq/r5vcKDNevmyT2RCrBaENvFGYzalOQ7SwLR+iKMNLQjfKg+nlsQxHkEfJaYIyhEydv9bVsCu9vSYx5aPmGfrySOmc5WwHq4NwTltFSttfQZBl1d8LST2Y63ZI/ZkkHXSN206bbgTAsptTzzhRDx810m0Qd2GYuZe5pb+jOdbt8nTOZt19HWhruNjoXINUz3LR8XNsYetFnx3oHPqM2cU9zw712x9Jb5Hu4YaJ7UcB9gqatIhsZttwNq0WzXbcNDF3t1t3NeWkwtd41TB9jdqnj826DpTuGI92bSCis78StNw1Zh0P0uH0M5YbhTrvdM535jSig3lC72TOP+iOZdYZp19FZW4Z1U061of+4C0Q9L9UfkZWGYd9+wAPDyoNhFYbjfsygVSwrksvXhtqXAGG5fhuvDB8zBG3OVa+JC0Pn8WOYe6ydW4be767HB+C3V2+ofdOYFKM6w37PMeek1Ybatx1I4lYZPs8vWJJeG2re7qtBfGk47i7NK8NkfGHYRZpelu13Q+27/jTIzg2fa5Y5kp4MnWd7CQ9MnP+Gz/iMlmRHQ+1rf/TY/TPs7xfvPZYHw2db68+Jvwz7kxZtz7w0FO/m3CWF99dQ+4o4XZK/htqXwuoyGxjN22K6wDfP9N1bhWtkGuQ+DpF51ojtSGZ0t6fpszCPtosETWD6WWZqztAUXQ9BmKLrAVgsFovFYrFYLBaLxWKxWCwWi8VisRz5A8CchktaKqANAAAAAElFTkSuQmCC" width="200" height="200">
+      Usuario</h2>
+      <hr>
+      <div class="row">
+        <div class="form-group col-md-12">
+          <p>Bienvenido Usuario</p>
+        </div>
+
+      </div>
+      <hr>
+
+      <footer class="text-center">
+        <div class="mb-2">
+          <small>
+            © 2022 <i class="fa fa-globe" style="color:rgb(51, 41, 41)"></i> by - 
+              Joseph Marroquin
+            </a>
+          </small>
+        </div>
+
+
+      </footer>
+
+    </div>
+
+  </main>
+  <!-- page-content" -->
+</div>
+<!-- page-wrapper -->
+<!-- partial -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+<script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/esm/popper.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

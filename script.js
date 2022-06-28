@@ -1,39 +1,40 @@
 
 //Agregando admin por default
-let lista = new ListaUsuarios();
-let user = new Usuarios2("2354168452525", "WIlfred Perez", "Wilfred", "wilfred@usac.com", "Administrador", "123", "+502 (123) 123-4567");
-lista.add(user);
+let listaSimple = new ListaClientes()
+let user = new clientesU("2354168452525", "WIlfred Perez", "EDD", "wilfred@usac.com", "123", "+502 (123) 123-4567");
+listaSimple.add(user);
 
-function regresoHome() {
-  window.location.href = '../index.html'
-}
 
 function ingresarLogin() {
-  let user=document.getElementById("usser").value
-  let pass=document.getElementById("passw").value
-  if(lista.busquedaUser(user,pass)=="Administrador"){
-    window.location.href = '../admin/index.html'
-  }else if(lista.busquedaUser(user,pass)=="Usuario"){
-    window.location.href = '../users/index.html'
-  }else{
+  let user = document.getElementById("usser").value
+  let pass = document.getElementById("passw").value
+  if (listaSimple.buscar(user, pass) == true) {
+    if ($('#cbox2').prop('checked')) {
+      window.location.href = './admin/index.html'
+    }else{
+      window.location.href = './user/index.html'
+    }
+
+  } else {
     alert('Usuario o contraseña incorrectos')
-    document.getElementById("usser").value=""
-    document.getElementById("passw").value=""
+    document.getElementById("usser").value = ""
+    document.getElementById("passw").value = ""
   }
 }
 
-function traerDatos(){
+
+function cargarClientes() {
   let data = document.getElementById('carga').files[0];
   const fileReader = new FileReader();
-      fileReader.onload = function () {
-          let datos=JSON.parse(fileReader.result)
-          for(let item of datos){
-              let user=new Usuarios2(item.dpi,item.nombre_completo,item.nombre_usuario,item.correo,item.rol,item.contrasenia,item.telefono);
-              lista.add(user);
-          }
-          alert('Usuarios Cargados')
-      }
-      fileReader.readAsText(data);
+  fileReader.onload = function () {
+    let datos = JSON.parse(fileReader.result)
+    for (let item of datos) {
+      let clien = new clientesU(item.dpi, item.nombre_completo, item.nombre_usuario, item.correo, item.contrasenia, item.telefono)
+      listaSimple.add(clien)
+    }
+    //
+  }
+  fileReader.readAsText(data);
 }
 
 
