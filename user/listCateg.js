@@ -1,4 +1,4 @@
-class Nodo {
+class NodoC {
     constructor(_datosLibro) {
         this.datosLibro = _datosLibro
         this.siguiente = null
@@ -10,7 +10,7 @@ class listaCat {
         this.cabecera = null
     }
     add(_objetoPersonaje) {
-        var tempo = new Nodo(_objetoPersonaje)
+        var tempo = new NodoC(_objetoPersonaje)
         tempo.siguiente = this.cabecera
         this.cabecera = tempo
     }

@@ -27,3 +27,17 @@ class actorIconico{
         this.descripcion=descripcion
     }
 }
+
+class listaListaCategoria{
+    constructor(cabeza){
+        this.cabeza=cabeza
+        this.contenido=new listaDeCategorias()
+    }
+}
+
+class categoria{
+    constructor(id_categoria,company){
+        this.id_categoria=id_categoria
+        this.company=company
+    }
+}

@@ -16,8 +16,8 @@ function cargarActores() {
     fileReader.readAsText(data);
 }
 
-function eliminar(id){
-    avlPel.eliminar(avlPel.root,id)
+function eliminar(id) {
+    avlPel.eliminar(avlPel.root, id)
     listPelicula.Eliminacion(id)
     avlPel.graficar(avlPel.root)
     let res = document.querySelector('#tablaPeli').innerHTML = ""
@@ -116,4 +116,27 @@ function publicaComent(id_p) {
 
 function cerrarModal() {
     $("#ventana-modal").modal('hide');
+}
+
+let categ = new listaCat()
+
+function cargarCategoria() {
+    let data = document.getElementById('cargaC').files[0];
+    const fileReader = new FileReader();
+    fileReader.onload = function () {
+        let datos = JSON.parse(fileReader.result)
+        for (let item of datos) {
+            let cc = new categoria(item.id_categoria, item.company)
+            categ.add(cc)
+        }
+
+        //
+    }
+    fileReader.readAsText(data);
+}
+
+function verCategoria() {
+    let res = document.querySelector('#tablaPeli').innerHTML = ""
+    res = document.querySelector('#tablaPeli')
+    categ.mostrarTablaCategoria(res)
 }
