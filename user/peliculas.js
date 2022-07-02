@@ -100,7 +100,7 @@ class listPeli {
     modificaPuntuacion(id,puntua){
         var temporal = this.cabecera
         while (temporal != null) {
-            if(id==temporal.datosLibro.id_pelicula){
+            if(id==temporal.datosLibro.id_pelicula && puntua<=5  && puntua>0){
                 temporal.datosLibro.puntuacion_star=puntua
             }
             temporal = temporal.siguiente
