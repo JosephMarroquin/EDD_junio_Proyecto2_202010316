@@ -8,8 +8,10 @@ function cargarActores() {
     fileReader.onload = function () {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
-            let auto = new actorIconico(item.dni, item.nombre_actor, item.correo, item.descripcion)
-            actorAB.add(auto)
+            if(actorAB.validar(item.dni)!=true){
+                let auto = new actorIconico(item.dni, item.nombre_actor, item.correo, item.descripcion)
+                actorAB.add(auto)
+            }
         }
         //
     }
@@ -40,7 +42,7 @@ function cargarPeliculas() {
         //console.log(datos); 
         for (let item of datos) {
             if (listPelicula.validar(item.id_pelicula) != true) {
-                let pell = new peliculas(item.id_pelicula, item.nombre_pelicula, item.descripcion, item.puntuacion_star, item.precion_Q, "")
+                let pell = new peliculas(item.id_pelicula, item.nombre_pelicula, item.descripcion, item.puntuacion_star, item.precio_Q, "")
                 listPelicula.add(pell)
                 avlPel.add(pell)
             }
@@ -126,8 +128,10 @@ function cargarCategoria() {
     fileReader.onload = function () {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
-            let cc = new categoria(item.id_categoria, item.company)
-            categ.add(cc)
+            if(categ.validar(item.id_categoria)!=true){
+                let cc = new categoria(item.id_categoria, item.company)
+                categ.add(cc)
+            }
         }
 
         //

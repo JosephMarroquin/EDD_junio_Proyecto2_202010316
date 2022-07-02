@@ -8,7 +8,7 @@ function cargarPeliculas() {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
             if (avlPel.validar(avlPel.root, item.id_pelicula) != true) {
-                let peli = new peliculas(item.id_pelicula, item.nombre_pelicula, item.descripcion, item.puntuacion_star, item.precion_Q)
+                let peli = new peliculas(item.id_pelicula, item.nombre_pelicula, item.descripcion, item.puntuacion_star, item.precio_Q)
                 avlPel.add(peli)
             }
             /*console.log(item.id_pelicula);
@@ -24,8 +24,11 @@ function cargarPeliculas() {
     fileReader.readAsText(data);
 }
 
-d3.select("#download").on("click", function () {
-    d3.select(this)
-        .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#lienzoPelicula").html()))
-        .attr("download", "viz.svg")
-})
+$(document).ready(function(){
+    $('#download').click(function(){
+        domtoimage.toBlob(document.getElementById('lienzoPelicula')).then(function(blob){
+            window.saveAs(blob,"grafo.png");
+        });
+    });
+});
+

@@ -15,6 +15,16 @@ class listACT {
         this.cabecera = tempo
     }
 
+    validar(id){
+        var temporal = this.cabecera
+        while (temporal != null) {
+            if(id==temporal.datosLibro.dni){
+                return true;
+            }
+            temporal = temporal.siguiente
+        }
+    }
+
 
     mostrarTablaActor(res) {
         var temporal = this.cabecera

@@ -147,12 +147,16 @@ class AVL {
     }
 
     getCodigoInterno(node) {
-        let imagesTreeText = node._pelicula.id_pelicula + "\n";
+        let imagesTreeText = "";
         if (node.left != null) {
+            imagesTreeText+= node._pelicula.id_pelicula +"[ label =\"" +node._pelicula.id_pelicula + "\n"+node._pelicula.nombre_pelicula+"\"];\n"
+            imagesTreeText+= node.left._pelicula.id_pelicula +"[ label =\"" +node.left._pelicula.id_pelicula + "\n"+node.left._pelicula.nombre_pelicula+"\"];\n"
             imagesTreeText += node._pelicula.id_pelicula + " -> " + node.left._pelicula.id_pelicula + "\n";
             imagesTreeText+=this.getCodigoInterno(node.left);
         }
         if (node.right != null) {
+            imagesTreeText+= node._pelicula.id_pelicula +"[ label =\"" +node._pelicula.id_pelicula + "\n"+node._pelicula.nombre_pelicula+"\"];\n"
+            imagesTreeText+= node.right._pelicula.id_pelicula +"[ label =\"" +node.right._pelicula.id_pelicula + "\n"+node.right._pelicula.nombre_pelicula+"\"];\n"
             imagesTreeText += node._pelicula.id_pelicula + " -> " + node.right._pelicula.id_pelicula + "\n";
             imagesTreeText+=this.getCodigoInterno(node.right);
         }

@@ -14,9 +14,10 @@ function cargarCategorias() {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
             let indice=item.id_categoria%20
-            if(indice<20){
+            if(indice<20 && categ.validar(item.id_categoria)!=true){
                 let cc = new categoria(item.id_categoria, item.company)
                 encabezado.buscarCabeza(indice,cc)
+                categ.add(cc)
             }
         }
         
@@ -26,3 +27,11 @@ function cargarCategorias() {
     }
     fileReader.readAsText(data);
 }
+
+$(document).ready(function(){
+    $('#download').click(function(){
+        domtoimage.toBlob(document.getElementById('listaDelistas')).then(function(blob){
+            window.saveAs(blob,"grafo.png");
+        });
+    });
+});

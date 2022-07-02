@@ -24,6 +24,16 @@ class ListaClientes {
             temporal = temporal.siguiente
         }
     }
+
+    validar(dpi){
+        var temporal = this.cabecera
+        while (temporal != null) {
+            if(dpi==temporal.datosLibro.dpi){
+                return true
+            }
+            temporal = temporal.siguiente
+        }
+    }
   
    
     graficar() {

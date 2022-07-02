@@ -5,7 +5,7 @@ class Node {
         this.right = null
     }
 }
-
+let a=false;
 class ABB {
     constructor() {
         this.root = null
@@ -28,6 +28,21 @@ class ABB {
             if (tmp.right != null) this._add(value, tmp.right)
             else tmp.right = new Node(value)
         }
+    }
+
+    validar(tmp,id){
+        if (tmp != null) {
+            if(tmp.value.dni==id){
+                a=true
+                return a;
+            }
+            else{
+                a=false
+            }
+            this.validar(tmp.left,id);
+            this.validar(tmp.right,id);
+        }
+        return a
     }
 
    

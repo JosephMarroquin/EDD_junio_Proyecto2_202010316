@@ -15,6 +15,16 @@ class listaCat {
         this.cabecera = tempo
     }
 
+    validar(id){
+        var temporal = this.cabecera
+        while (temporal != null) {
+            if(id==temporal.datosLibro.id_categoria){
+                return true;
+            }
+            temporal = temporal.siguiente
+        }
+    }
+
 
     mostrarTablaCategoria(res) {
         var temporal = this.cabecera

@@ -7,8 +7,10 @@ function cargarAutores(){
     fileReader.onload = function () {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
-            let auto=new actorIconico(item.dni,item.nombre_actor,item.correo,item.descripcion)
-            arbolbs.add(auto)
+            if(arbolbs.validar(arbolbs.root,item.dni)!=true){
+                let auto=new actorIconico(item.dni,item.nombre_actor,item.correo,item.descripcion)
+                arbolbs.add(auto)
+            }
         }
         arbolbs.getCodigoGraphviz(arbolbs.root)
         //
@@ -16,8 +18,11 @@ function cargarAutores(){
     fileReader.readAsText(data);
 }
 
-d3.select("#download").on("click", function() {
-    d3.select(this)
-      .attr("href", 'data:application/octet-stream;base64,' + btoa(d3.select("#lienzoAutor").html()))
-      .attr("download", "viz.svg") 
-  })
+$(document).ready(function(){
+    $('#download').click(function(){
+        domtoimage.toBlob(document.getElementById('lienzoAutor')).then(function(blob){
+            window.saveAs(blob,"grafo.png");
+        });
+    });
+});
+

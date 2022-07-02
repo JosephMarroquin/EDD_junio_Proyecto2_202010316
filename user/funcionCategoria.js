@@ -6,8 +6,10 @@ function cargarCategoria() {
     fileReader.onload = function () {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
-            let cc = new categoria(item.id_categoria, item.company)
-            categ.add(cc)
+            if(categ.validar(item.id_categoria)!=true){
+                let cc = new categoria(item.id_categoria, item.company)
+                categ.add(cc)
+            }
         }
         let res = document.querySelector('#tablaCategorias').innerHTML = ""
         res = document.querySelector('#tablaCategorias')

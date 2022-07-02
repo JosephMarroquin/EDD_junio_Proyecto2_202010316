@@ -7,8 +7,10 @@ function cargarAutores(){
     fileReader.onload = function () {
         let datos = JSON.parse(fileReader.result)
         for (let item of datos) {
-            let auto=new actorIconico(item.dni,item.nombre_actor,item.correo,item.descripcion)
-            arbolbs.add(auto)
+            if(arbolbs.validar(arbolbs.root,item.dni)!=true){
+                let auto=new actorIconico(item.dni,item.nombre_actor,item.correo,item.descripcion)
+                arbolbs.add(auto)
+            }
         }
         //
     }

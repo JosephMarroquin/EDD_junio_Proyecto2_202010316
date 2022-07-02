@@ -5,7 +5,7 @@ class Node {
         this.right = null
     }
 }
-
+let a=false;
 class ABB {
     constructor() {
         this.root = null
@@ -30,6 +30,20 @@ class ABB {
         }
     }
 
+    validar(tmp,id){
+        if (tmp != null) {
+            if(tmp.value.dni==id){
+                a=true
+                return a;
+            }
+            else{
+                a=false
+            }
+            this.validar(tmp.left,id);
+            this.validar(tmp.right,id);
+        }
+        return a
+    }
    
     preorder(tmp) {
         if (tmp != null) {
@@ -72,9 +86,9 @@ class ABB {
     getCodigoInterno(Nodetmp) {
         let etiqueta;
         if (Nodetmp.left == null && Nodetmp.right == null) {
-            etiqueta = "nodo" + Nodetmp.value.dni + " [ label =\"" + Nodetmp.value.dni + "\"];\n";
+            etiqueta = "nodo" + Nodetmp.value.dni + " [ label =\"" + Nodetmp.value.dni + "\n"+Nodetmp.value.nombre_actor+"\"];\n";
         } else {
-            etiqueta = "nodo" + Nodetmp.value.dni + " [ label =\"" + Nodetmp.value.dni + "\"];\n";
+            etiqueta = "nodo" + Nodetmp.value.dni + " [ label =\"" + Nodetmp.value.dni + "\n"+Nodetmp.value.nombre_actor+"\"];\n";
         }
         if (Nodetmp.left != null) {
             etiqueta = etiqueta + this.getCodigoInterno(Nodetmp.left)
